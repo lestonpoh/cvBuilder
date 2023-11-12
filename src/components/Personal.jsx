@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Education({updateData,data}) {
+function Personal({updateData,data}) {
 
         const [infos,setInfos] = useState(data)
 
@@ -22,8 +22,8 @@ function Education({updateData,data}) {
 
         return (
             <div className = "card">
-                <div className = "education">
-                    <h2>Education</h2>
+                <div className = "personal">
+                    <h2>Personal Information</h2>
                     <form onSubmit={handleSubmit}>
                         {infos.map(info=>
                     
@@ -45,4 +45,4 @@ function Education({updateData,data}) {
     )
   }
   
-  export default Education
+  export default Personal

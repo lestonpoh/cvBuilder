@@ -1,21 +1,33 @@
 import { useState } from 'react'
 import Education from './components/Education'
+import Personal from './components/Personal'
+import Preview from './components/Preview.jsx'
 import './App.css'
 
 function App() {
-  const [educationInfo,setEducationInfo] = useState({
-    "school":"a",
-    "degree":"b"
-  })
+  const [personalInfo,setPersonalInfo] = useState([
+    {field:"Name",value:""},
+    {field:"Email",value:""},
+    {field:"Phone",value:""}
+    ])
+
+  const [educationInfo,setEducationInfo] = useState([
+    {field:"School",value:""},
+    {field:"Degree",value:""}
+  ])
+  
+  
+
+  const allInfo = [
+    {type:"Personal", data:personalInfo},
+    {type:"Education", data:educationInfo}
+  ]
 
   return (
     <>
-      <Education updateInfo={setEducationInfo}/>
-      <ul>
-        <li>{educationInfo.school}</li>
-        <li>{educationInfo.degree}</li>
-      </ul>
-      <div>fwefwe</div>
+      <Personal updateData={setPersonalInfo} data={personalInfo}/>
+      <Education updateData={setEducationInfo} data={educationInfo}/>
+      <Preview allInfo={allInfo}/>
     </>
   )
 }
