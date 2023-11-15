@@ -1,33 +1,47 @@
 import { useState } from 'react'
-import Education from './components/Education'
+import Header from './components/Header'
 import Personal from './components/Personal'
+import Education from './components/Education'
+import Experience from './components/Experience'
 import Preview from './components/Preview.jsx'
 import './App.css'
 
 function App() {
-  const [personalInfo,setPersonalInfo] = useState([
+  const [personalInfo,setPersonalInfo] = useState(
+    [
     {field:"Name",value:""},
     {field:"Email",value:""},
     {field:"Phone",value:""}
-    ])
+    ]
+    )
 
-  const [educationInfo,setEducationInfo] = useState([
+  const [educationInfo,setEducationInfo] = useState(
+    [
     {field:"School",value:""},
     {field:"Degree",value:""}
-  ])
-  
-  
-
-  const allInfo = [
-    {type:"Personal", data:personalInfo},
-    {type:"Education", data:educationInfo}
   ]
+  )
+  
+  const [experienceInfo, setExperienceInfo] = useState(
+    [
+      {number:1,fields:[{field:"Company Name",value:""},
+                        {field:"Responsibility",value:""},
+                        {field:"Date From",value:""},
+                        {field:"Date To",value:""}]}
+    ]
+  )
+
 
   return (
     <>
-      <Personal updateData={setPersonalInfo} data={personalInfo}/>
-      <Education updateData={setEducationInfo} data={educationInfo}/>
-      <Preview allInfo={allInfo}/>
+      <div className="editor">
+        <Header />
+        <Personal updateData={setPersonalInfo} data={personalInfo}/>
+        <Education updateData={setEducationInfo} data={educationInfo}/>
+        <Experience updateData={setExperienceInfo} data={experienceInfo}/>
+      </div>
+      
+      <Preview personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}/>
     </>
   )
 }

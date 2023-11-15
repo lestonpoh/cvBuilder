@@ -1,0 +1,12 @@
+
+
+button{
+    padding: 5px 10px;
+    border:none;
+    border-radius: 10px;
+}
+
+.header{
+    display:flex;
+    justify-content: space-between;
+}

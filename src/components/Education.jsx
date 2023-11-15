@@ -26,16 +26,19 @@ function Education({updateData,data}) {
                     <h2>Education</h2>
                     <form onSubmit={handleSubmit}>
                         {infos.map(info=>
-                    
-                        <input 
-                            key = {info.field}
-                            placeholder = {info.field}
-                            value = {info.value}
-                            onChange={e=>{
-                                handleInputChange(info.field,e)
-                            }}
-                        
-                        />         
+                        <label key = {info.field+"label"}>
+                            <span>{info.field}</span>
+                            <input 
+                                key = {info.field+"input"}
+                                placeholder = {info.field}
+                                value = {info.value}
+                                onChange={e=>{
+                                    handleInputChange(info.field,e)
+                                }}
+                            
+                            />    
+                        </label>
+                             
                     )}
 
                         <button type="submit">Submit</button>

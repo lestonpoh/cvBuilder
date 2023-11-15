@@ -1,0 +1,88 @@
+#root{
+    max-width: 800px;
+    margin:auto
+}
+
+button{
+    padding: 10px 15px;
+    border:none;
+    border-radius: 5px;
+    color: white;
+    background-color: #7d3cff;
+    font-weight: bolder;
+    box-shadow: 2px 2px 5px rgb(0,0,0,0.5);
+}
+
+button:hover{
+    transform: scale(1.02);
+}
+
+button:active{
+    transform: scale(0.98)
+}
+
+h2{
+    margin:10px 0 20px 0
+}
+input{
+    border:none;
+    padding:5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card{
+    background-color: #fceed1;
+    padding:20px;
+    margin:15px 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0,0,0,0.5);
+}
+
+label{
+    font-weight: bold;
+    display:flex;
+    flex-direction: column;
+    margin:10px 0
+}
+
+.personal button[type=submit], .education button[type=submit]{
+    display:block;
+    margin-left:auto
+}
+
+.experiences .buttons{
+    display:flex;
+    justify-content: space-between;
+}
+
+.experience{
+    border-bottom: 1px solid rgb(0,0,0,0.2);
+    padding:20px 0
+}
+
+.experiences form div:first-child{
+    padding-top: 0;
+}
+
+.experiences form div:nth-last-child(2){
+    border: none;
+}
+
+.resume{
+    
+    background-color: white;
+    padding:30px 20px;
+    position: fixed;
+    height: 80vh;
+    width:600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
