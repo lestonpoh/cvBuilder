@@ -2,11 +2,10 @@ function Preview({personalInfo,educationInfo,experienceInfo}){
 
     return(
         <div className="resume">
-            <h2>Resume</h2>
-            <div className="personal">
-                <h3>Personal Information</h3>
+            {/* <h2>Resume</h2> */}
+            <div className="Personal">
                 {personalInfo.map(info=>
-                    <div key={info.field}>{info.field +": "+ info.value}</div>)}
+                    <div key={info.field}>{info.value}</div>)}
             </div>
             <div className="Education">
                 <h3>Education</h3>

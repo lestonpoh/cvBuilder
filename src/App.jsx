@@ -7,6 +7,8 @@ import Preview from './components/Preview.jsx'
 import './App.css'
 
 function App() {
+  const [showPreview, setShowPreview] = useState(false)
+
   const [personalInfo,setPersonalInfo] = useState(
     [
     {field:"Name",value:""},
@@ -35,13 +37,14 @@ function App() {
   return (
     <>
       <div className="editor">
-        <Header />
+        <Header togglePreview={()=>setShowPreview(!showPreview)}/>
         <Personal updateData={setPersonalInfo} data={personalInfo}/>
         <Education updateData={setEducationInfo} data={educationInfo}/>
         <Experience updateData={setExperienceInfo} data={experienceInfo}/>
+        {showPreview && <Preview personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}/>}
       </div>
+
       
-      <Preview personalInfo={personalInfo} educationInfo={educationInfo} experienceInfo={experienceInfo}/>
     </>
   )
 }
